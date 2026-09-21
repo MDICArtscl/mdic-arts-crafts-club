@@ -151,3 +151,46 @@ footer p{font-size:11px;color:rgba(255,255,255,.65)}
   .gallery-grid{columns:1}
   .join{padding:75px 7vw}
 }
+
+/* Mobile / in-app browser stability fixes */
+html, body { width:100%; max-width:100%; overflow-x:hidden; }
+main, section, header, footer { width:100%; max-width:100%; min-width:0; }
+img { max-width:100%; height:auto; }
+.hero, .section, .festival, .join { min-width:0; }
+.featured-event, .featured-event-copy, .staff-grid, .staff-card { min-width:0; max-width:100%; }
+.event-poster { width:100%; max-width:430px; height:auto; justify-self:center; }
+
+@media (max-width:1100px) {
+  .two-col, .festival, .join, .featured-event { grid-template-columns:minmax(0,1fr); }
+  .cards, .staff-grid { grid-template-columns:minmax(0,1fr); }
+  .section-heading { display:block; }
+  .section-heading p { margin-top:18px; }
+}
+
+@media (max-width:600px) {
+  .navbar { height:72px; padding:0 5vw; }
+  nav { top:72px; }
+  .brand-mark { width:36px; height:36px; font-size:18px; }
+  .brand strong { font-size:18px; }
+  .brand span { font-size:7px; letter-spacing:1.5px; }
+  .menu-btn { font-size:22px; }
+  .hero { width:100%; min-height:620px; height:100svh; padding:105px 7vw 55px; background-position:center center; }
+  .hero-content { width:100%; max-width:100%; }
+  .hero h1 { font-size:clamp(46px,14vw,58px); letter-spacing:-1px; }
+  .hero p { font-size:15px; }
+  .section { width:100%; padding:70px 7vw; }
+  .section h2, .section-heading h2 { font-size:clamp(38px,11vw,50px); }
+  .two-col { gap:28px; }
+  .stats { margin-top:50px; }
+  .featured-event { width:100%; gap:30px; }
+  .event-poster { width:100%; max-width:100%; }
+  .featured-event-copy h3 { font-size:38px; }
+  .featured-event-copy p { font-size:15px; }
+  .deadline { padding:16px; }
+  .deadline span { font-size:20px; }
+  .timeline-item { grid-template-columns:42px minmax(0,1fr); gap:14px; }
+  .topic-mark { font-size:22px; }
+  .staff-card { grid-template-columns:42px minmax(0,1fr); gap:12px; padding:20px; }
+  .staff-card h3 { font-size:22px; }
+  .gallery-grid { columns:1; }
+}
